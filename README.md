@@ -1,2 +1,2 @@
 # Data-Science
-Yandex.Practicum course
+Yandex.Practicum course project
