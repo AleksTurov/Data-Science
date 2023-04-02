@@ -1,0 +1,45 @@
+---
+- name: Install and configure Jenkins
+  hosts: server1
+  become: true
+
+  tasks:
+    - name: Update yum cache and upgrade packages
+      yum:
+        name: '*'
+        state: latest
+      become: true
+
+    - name: Install Java
+      yum:
+        name: java-1.8.0-openjdk-devel
+        state: present
+      become: true
+
+    - name: Add Jenkins repository key
+      rpm_key:
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+        state: present
+      become: true
+
+    - name: Add Jenkins repository
+      yum_repository:
+        name: jenkins
+        description: Jenkins-stable
+        baseurl: http://pkg.jenkins.io/redhat-stable/
+        gpgcheck: yes
+        gpgkey: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+      become: true
+
+    - name: Install Jenkins
+      yum:
+        name: jenkins
+        state: present
+      become: true
+
+    - name: Start and enable Jenkins service
+      systemd:
+        name: jenkins
+        state: started
+        enabled: yes
+      become: true
