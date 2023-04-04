@@ -10,14 +10,13 @@ NumPy, Pandas
 PyTorch, Transformers
 LogisticRegression, CatBoostClassifier
 tqdm, TfidfVectorizer, GridSearchCV, StratifiedKFold
-DistilBertTokenizer, DistilBertConfig, DistilBertForSequenceClassification, AutoTokenizer, AutoModelForSequenceClassification
+Bert-toxic, AutoTokenizer, AutoModelForSequenceClassification
 TensorDataset, Dataset, DataLoader
+
 Результаты проекта
-Мы построили инструмент, который будет искать токсичные комментарии и отправлять их на модерацию в интернет-магазине.
-
-Мы использовали два способа для определения токсичных комментариев: предобученную нейронную сеть BERT и модель машинного обучения CatBoost. Обе модели имеют свои плюсы и минусы.
-
-Мы получили метрику качества F1=0.752 для модели CatBoost и F1=0.85 для предобученной модели BERT.
+Мы построили инструмент, который будет искать токсичные комментарии и отправлять их на модерацию. 
+Обучили модель классифицировать комментарии на позитивные и негативные.
+Построил модель со значением метрики качества на тестовой выборке F1 = 0.78 для линейной регрессии и Взяли обученную модель Bert-toxic и построили на ней прогноз и измерили F1= 0.83
 
 Статус проекта
 Проект находится в процессе выполнения. Планируется завершение до 09.04.2023.
