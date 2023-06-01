@@ -1,0 +1,2 @@
+Model,F1 score,ROC-AUC,Gini Index,Notice,params
+DecisionTreeClassifier,0.35,0.69,0.37,test,"{'max_depth': 3, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 3}"
